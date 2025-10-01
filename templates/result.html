@@ -1,0 +1,31 @@
+<!-- templates/result.html -->
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Converted HTML</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+<h1>Nəticə</h1>
+
+
+<div class="result">
+<!-- Rendered HTML from Markdown -->
+<div class="rendered">{{ html_body|safe }}</div>
+</div>
+
+
+<form action="{{ url_for('download') }}" method="post">
+<!-- send raw markdown so the server can re-convert & create full HTML file -->
+<input type="hidden" name="raw_md" value="{{ raw_md|e }}">
+<button type="submit">HTML kimi endir (.html)</button>
+</form>
+
+
+<p><a href="{{ url_for('index') }}">Geri qayıt</a></p>
+</main>
+</body>
+</html>
