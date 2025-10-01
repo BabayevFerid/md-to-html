@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+*.sqlite3
+
+
+# macOS
+.DS_Store
+
+
+# IDEs
+.vscode/
+.idea/
+
+
+# Packages
+dist/
+build/
+*.egg-info/
+
+
+# Logs
+*.log
+
+
+# local settings
+instance/
