@@ -1,0 +1,47 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Markdown → HTML Converter</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+<h1>Markdown → HTML Converter</h1>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="flash">
+{% for msg in messages %}
+<div class="flash-item">{{ msg }}</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+
+<form method="POST" enctype="multipart/form-data">
+<label for="md_file">Markdown faylını yüklə (isteğe bağlı):</label>
+<input type="file" name="md_file" accept=".md,text/markdown">
+
+
+<label for="markdown_text">Və ya Markdown mətnini buraya yapışdır:</label>
+<textarea name="markdown_text" rows="12" placeholder="# Başlıq\n
+Paragraph..."></textarea>
+
+
+<div class="buttons">
+<button type="submit">Çevir</button>
+</div>
+</form>
+
+
+<footer>
+<p>Sadə layihə — GitHub üçün hazır. İstəsən "download" funksiyası ilə HTML faylını endirə bilərsən.</p>
+</footer>
+</main>
+</body>
+</html>
